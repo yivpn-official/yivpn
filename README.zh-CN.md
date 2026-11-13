@@ -29,9 +29,9 @@ YIVPN（易VPN）是基于 sing-box 的轻量跨平台 VPN 客户端：免注册
 
 | 支持平台 | 官网高速直连 | GitHub 分发源 | SHA-256 哈希校验 |
 | :--- | :--- | :--- | :--- |
-| **Windows 10 / 11 (64-bit)** | [`YIVPN_1.0.4_x64.msi`](https://yivpn.net/downloads/YIVPN_1.0.4_x64.msi) (30.42 MiB) | [Download from GitHub](https://github.com/yivpn-official/yivpn/releases/download/v1.0.4/YIVPN_1.0.4_x64.msi) | `76db69b44b694eda…` ([full](https://github.com/yivpn-official/yivpn/releases/download/v1.0.4/YIVPN_1.0.4_x64.msi.sha256)) |
-| **Windows 10 / 11 Portable (64-bit)** | [`YIVPN_1.0.4_x64_portable.zip`](https://yivpn.net/downloads/YIVPN_1.0.4_x64_portable.zip) (29.97 MiB) | [Download from GitHub](https://github.com/yivpn-official/yivpn/releases/download/v1.0.4/YIVPN_1.0.4_x64_portable.zip) | `6e85e0905459382c…` ([full](https://github.com/yivpn-official/yivpn/releases/download/v1.0.4/YIVPN_1.0.4_x64_portable.zip.sha256)) |
-| **macOS 11+ (Apple Silicon & Intel Universal)** | [`YIVPN_1.0.4_universal.dmg`](https://yivpn.net/downloads/YIVPN_1.0.4_universal.dmg) (65.47 MiB) | [Download from GitHub](https://github.com/yivpn-official/yivpn/releases/download/v1.0.4/YIVPN_1.0.4_universal.dmg) | `c7c12af7da5ce09a…` ([full](https://github.com/yivpn-official/yivpn/releases/download/v1.0.4/YIVPN_1.0.4_universal.dmg.sha256)) |
+| **Windows 10 / 11 (64-bit)** | [`YIVPN_1.0.4_x64.msi`](https://yivpn.net/downloads/YIVPN_1.0.4_x64.msi) (32.68 MiB) | [Download from GitHub](https://github.com/yivpn-official/yivpn/releases/download/v1.0.4/YIVPN_1.0.4_x64.msi) | `7806e64cd33b0d29…` ([full](https://github.com/yivpn-official/yivpn/releases/download/v1.0.4/YIVPN_1.0.4_x64.msi.sha256)) |
+| **Windows 10 / 11 Portable (64-bit)** | [`YIVPN_1.0.4_x64_portable.zip`](https://yivpn.net/downloads/YIVPN_1.0.4_x64_portable.zip) (30.27 MiB) | [Download from GitHub](https://github.com/yivpn-official/yivpn/releases/download/v1.0.4/YIVPN_1.0.4_x64_portable.zip) | `f16597f1584a3a8d…` ([full](https://github.com/yivpn-official/yivpn/releases/download/v1.0.4/YIVPN_1.0.4_x64_portable.zip.sha256)) |
+| **macOS 11+ (Apple Silicon & Intel Universal)** | [`YIVPN_1.0.4_universal.dmg`](https://yivpn.net/downloads/YIVPN_1.0.4_universal.dmg) (66.02 MiB) | [Download from GitHub](https://github.com/yivpn-official/yivpn/releases/download/v1.0.4/YIVPN_1.0.4_universal.dmg) | `4f9bc2a167d1bb53…` ([full](https://github.com/yivpn-official/yivpn/releases/download/v1.0.4/YIVPN_1.0.4_universal.dmg.sha256)) |
 | **Android 7.0+ (ARM64-v8a)** | [`YIVPN-Android-1.0.4-arm64-v8a.apk`](https://yivpn.net/downloads/YIVPN-Android-1.0.4-arm64-v8a.apk) (86.32 MiB) | [Download from GitHub](https://github.com/yivpn-official/yivpn/releases/download/v1.0.4/YIVPN-Android-1.0.4-arm64-v8a.apk) | `040b52d03fe631f5…` ([full](https://github.com/yivpn-official/yivpn/releases/download/v1.0.4/YIVPN-Android-1.0.4-arm64-v8a.apk.sha256)) |
 | **iOS & iPadOS (15+)** | *iOS Coming Soon* | [Follow Releases](https://github.com/yivpn-official/yivpn/releases) | — |
 
@@ -64,3 +64,5 @@ node scripts/verify-releases.mjs --remote
 - **安全架构与零活动日志说明**: [https://yivpn.net/security/](https://yivpn.net/security/)
 - **隐私政策**: [https://yivpn.net/privacy/](https://yivpn.net/privacy/)
 - **Smart Split Rules (Open Source)**: [github.com/yivpn-official/singbox-smart-split](https://github.com/yivpn-official/singbox-smart-split)
+- **Local VPN MCP Server (Claude Code / Codex)**: [https://yivpn.net/vpn-mcp/](https://yivpn.net/vpn-mcp/)
+- **Agent VPN API & CLI (Open Source)**: [github.com/yivpn-official/yivpn-agent-cli](https://github.com/yivpn-official/yivpn-agent-cli)

@@ -3,7 +3,7 @@
   "alternateName": "易VPN",
   "version": "1.0.4",
   "releaseTag": "v1.0.4",
-  "releasedAt": "2026-11-13",
+  "releasedAt": "2026-11-14",
   "website": "https://yivpn.net",
   "githubRepository": "https://github.com/yivpn-official/yivpn",
   "packages": [
@@ -11,8 +11,8 @@
       "id": "winMsi",
       "platform": "Windows 10 / 11 (64-bit)",
       "filename": "YIVPN_1.0.4_x64.msi",
-      "sizeLabel": "30.42 MiB (31,895,552 B)",
-      "sha256": "76db69b44b694edae415c5d84ea2edefa03613905da3453d2167a90e58c864c3",
+      "sizeLabel": "32.68 MiB (34,267,136 B)",
+      "sha256": "7806e64cd33b0d29860473a63debacfd6887663868b627476a494829bbb7287c",
       "directUrl": "https://yivpn.net/downloads/YIVPN_1.0.4_x64.msi",
       "githubReleaseUrl": "https://github.com/yivpn-official/yivpn/releases/download/v1.0.4/YIVPN_1.0.4_x64.msi",
       "sha256Url": "https://github.com/yivpn-official/yivpn/releases/download/v1.0.4/YIVPN_1.0.4_x64.msi.sha256"
@@ -21,8 +21,8 @@
       "id": "winZip",
       "platform": "Windows 10 / 11 Portable (64-bit)",
       "filename": "YIVPN_1.0.4_x64_portable.zip",
-      "sizeLabel": "29.97 MiB (31,424,747 B)",
-      "sha256": "6e85e0905459382c50017e80b48af24a793c2d3118208f7cb8c43ef14363e06c",
+      "sizeLabel": "30.27 MiB (31,743,822 B)",
+      "sha256": "f16597f1584a3a8d07e7cf8a8e656160dd40d72f82e386e782c7425dd8cc3f5e",
       "directUrl": "https://yivpn.net/downloads/YIVPN_1.0.4_x64_portable.zip",
       "githubReleaseUrl": "https://github.com/yivpn-official/yivpn/releases/download/v1.0.4/YIVPN_1.0.4_x64_portable.zip",
       "sha256Url": "https://github.com/yivpn-official/yivpn/releases/download/v1.0.4/YIVPN_1.0.4_x64_portable.zip.sha256"
@@ -31,8 +31,8 @@
       "id": "macDmg",
       "platform": "macOS 11+ (Apple Silicon & Intel Universal)",
       "filename": "YIVPN_1.0.4_universal.dmg",
-      "sizeLabel": "65.47 MiB (68,645,079 B)",
-      "sha256": "c7c12af7da5ce09af912c2e1a47e97b252cb1f3a95628b194bc23022cac97c1e",
+      "sizeLabel": "66.02 MiB (69,226,940 B)",
+      "sha256": "4f9bc2a167d1bb5342e0e24fd74f2a72fee5d47f5cf109d7b5959d7e6b91df14",
       "directUrl": "https://yivpn.net/downloads/YIVPN_1.0.4_universal.dmg",
       "githubReleaseUrl": "https://github.com/yivpn-official/yivpn/releases/download/v1.0.4/YIVPN_1.0.4_universal.dmg",
       "sha256Url": "https://github.com/yivpn-official/yivpn/releases/download/v1.0.4/YIVPN_1.0.4_universal.dmg.sha256"

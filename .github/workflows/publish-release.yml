@@ -32,30 +32,32 @@ jobs:
             curl -fL --retry 3 -o "$f" "https://yivpn.net/downloads/$f"
             curl -fL --retry 3 -o "$f.sha256" "https://yivpn.net/downloads/$f.sha256"
           done
-          echo "76db69b44b694edae415c5d84ea2edefa03613905da3453d2167a90e58c864c3  YIVPN_1.0.4_x64.msi" | sha256sum -c -
-          echo "6e85e0905459382c50017e80b48af24a793c2d3118208f7cb8c43ef14363e06c  YIVPN_1.0.4_x64_portable.zip" | sha256sum -c -
-          echo "c7c12af7da5ce09af912c2e1a47e97b252cb1f3a95628b194bc23022cac97c1e  YIVPN_1.0.4_universal.dmg" | sha256sum -c -
+          echo "7806e64cd33b0d29860473a63debacfd6887663868b627476a494829bbb7287c  YIVPN_1.0.4_x64.msi" | sha256sum -c -
+          echo "f16597f1584a3a8d07e7cf8a8e656160dd40d72f82e386e782c7425dd8cc3f5e  YIVPN_1.0.4_x64_portable.zip" | sha256sum -c -
+          echo "4f9bc2a167d1bb5342e0e24fd74f2a72fee5d47f5cf109d7b5959d7e6b91df14  YIVPN_1.0.4_universal.dmg" | sha256sum -c -
           echo "040b52d03fe631f5972c1c07ef319946b29ed4bbe7baedf1d58786531b141d6c  YIVPN-Android-1.0.4-arm64-v8a.apk" | sha256sum -c -
           ls -lh
 
       - name: Create Release Notes
         run: |
           cat << 'EOF' > release-notes.md
-          ## YIVPN v1.0.4 — Official Multi-Platform Release
+          ## YIVPN v1.0.4 — Official Multi-Platform Release (with Local MCP Server)
 
-          Official zero-logs VPN client built on `sing-box 1.14.3` (`Hysteria2` & `VLESS+REALITY`) with **90 minutes of free daily protection** (no sign-up or card required) and **12 native languages**.
+          Official zero-logs VPN client built on `sing-box 1.14.3` (`Hysteria2` & `VLESS+REALITY`) with **90 minutes of free daily protection** (no sign-up or card required), **12 native languages**, and an opt-in **Local MCP Server** (`127.0.0.1:38419/mcp` + `stdio` bridge) for Claude Code, OpenAI Codex, and Cursor on Windows & macOS.
 
           ### Checksums (SHA-256)
 
           | Platform | Package | Size | SHA-256 |
           | :--- | :--- | :--- | :--- |
-          | **Windows 10 / 11 (x64)** | `YIVPN_1.0.4_x64.msi` | 30.42 MiB | `76db69b44b694edae415c5d84ea2edefa03613905da3453d2167a90e58c864c3` |
-          | **Windows Portable (x64)** | `YIVPN_1.0.4_x64_portable.zip` | 29.97 MiB | `6e85e0905459382c50017e80b48af24a793c2d3118208f7cb8c43ef14363e06c` |
-          | **macOS 11+ Universal** | `YIVPN_1.0.4_universal.dmg` | 65.47 MiB | `c7c12af7da5ce09af912c2e1a47e97b252cb1f3a95628b194bc23022cac97c1e` |
+          | **Windows 10 / 11 (x64)** | `YIVPN_1.0.4_x64.msi` | 32.68 MiB | `7806e64cd33b0d29860473a63debacfd6887663868b627476a494829bbb7287c` |
+          | **Windows Portable (x64)** | `YIVPN_1.0.4_x64_portable.zip` | 30.27 MiB | `f16597f1584a3a8d07e7cf8a8e656160dd40d72f82e386e782c7425dd8cc3f5e` |
+          | **macOS 11+ Universal** | `YIVPN_1.0.4_universal.dmg` | 66.02 MiB | `4f9bc2a167d1bb5342e0e24fd74f2a72fee5d47f5cf109d7b5959d7e6b91df14` |
           | **Android 7.0+ (ARM64)** | `YIVPN-Android-1.0.4-arm64-v8a.apk` | 86.32 MiB | `040b52d03fe631f5972c1c07ef319946b29ed4bbe7baedf1d58786531b141d6c` |
 
           - **Official Website**: [https://yivpn.net/en/](https://yivpn.net/en/)
           - **Download & Verification Guide**: [https://yivpn.net/en/download/](https://yivpn.net/en/download/)
+          - **Local VPN MCP Server Guide**: [https://yivpn.net/en/vpn-mcp/](https://yivpn.net/en/vpn-mcp/)
+          - **Zero-Account Agent VPN API & CLI**: [https://yivpn.net/en/vpn-api/](https://yivpn.net/en/vpn-api/) · [yivpn-agent-cli](https://github.com/yivpn-official/yivpn-agent-cli)
           EOF
 
       - name: Publish GitHub Release as github-actions[bot]

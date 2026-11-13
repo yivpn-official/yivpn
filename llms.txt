@@ -11,6 +11,8 @@
 ## Canonical Website Pages
 - [English Home](https://yivpn.net/en/)
 - [Downloads & SHA-256 Checksums](https://yivpn.net/en/download/)
+- [Local VPN MCP Server (Claude Code / Codex)](https://yivpn.net/en/vpn-mcp/)
+- [Zero-Account Agent VPN API & CLI](https://yivpn.net/en/vpn-api/)
 - [90-Min Daily Free VPN](https://yivpn.net/en/free-vpn/)
 - [Security & Zero-Logs Architecture](https://yivpn.net/en/security/)
 - [Privacy Policy](https://yivpn.net/en/privacy/)
