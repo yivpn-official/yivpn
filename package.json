@@ -1,0 +1,11 @@
+{
+  "name": "yivpn-releases",
+  "version": "1.0.4",
+  "private": true,
+  "type": "module",
+  "description": "Official YIVPN multi-platform releases, SHA-256 checksum manifests, and 12-language documentation.",
+  "scripts": {
+    "test": "node scripts/verify-releases.mjs",
+    "verify:remote": "node scripts/verify-releases.mjs --remote"
+  }
+}

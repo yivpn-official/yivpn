@@ -1,0 +1,71 @@
+name: Publish Official Release Binaries
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release tag to publish'
+        required: true
+        default: 'v1.0.4'
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch and cryptographically verify official v1.0.4 binaries
+        run: |
+          mkdir -p dist
+          cd dist
+          FILES=(
+            "YIVPN_1.0.4_x64.msi"
+            "YIVPN_1.0.4_x64_portable.zip"
+            "YIVPN_1.0.4_universal.dmg"
+            "YIVPN-Android-1.0.4-arm64-v8a.apk"
+          )
+          for f in "${FILES[@]}"; do
+            echo "Downloading $f ..."
+            curl -fL --retry 3 -o "$f" "https://yivpn.net/downloads/$f"
+            curl -fL --retry 3 -o "$f.sha256" "https://yivpn.net/downloads/$f.sha256"
+          done
+          echo "76db69b44b694edae415c5d84ea2edefa03613905da3453d2167a90e58c864c3  YIVPN_1.0.4_x64.msi" | sha256sum -c -
+          echo "6e85e0905459382c50017e80b48af24a793c2d3118208f7cb8c43ef14363e06c  YIVPN_1.0.4_x64_portable.zip" | sha256sum -c -
+          echo "c7c12af7da5ce09af912c2e1a47e97b252cb1f3a95628b194bc23022cac97c1e  YIVPN_1.0.4_universal.dmg" | sha256sum -c -
+          echo "040b52d03fe631f5972c1c07ef319946b29ed4bbe7baedf1d58786531b141d6c  YIVPN-Android-1.0.4-arm64-v8a.apk" | sha256sum -c -
+          ls -lh
+
+      - name: Create Release Notes
+        run: |
+          cat << 'EOF' > release-notes.md
+          ## YIVPN v1.0.4 — Official Multi-Platform Release
+
+          Official zero-logs VPN client built on `sing-box 1.14.3` (`Hysteria2` & `VLESS+REALITY`) with **90 minutes of free daily protection** (no sign-up or card required) and **12 native languages**.
+
+          ### Checksums (SHA-256)
+
+          | Platform | Package | Size | SHA-256 |
+          | :--- | :--- | :--- | :--- |
+          | **Windows 10 / 11 (x64)** | `YIVPN_1.0.4_x64.msi` | 30.42 MiB | `76db69b44b694edae415c5d84ea2edefa03613905da3453d2167a90e58c864c3` |
+          | **Windows Portable (x64)** | `YIVPN_1.0.4_x64_portable.zip` | 29.97 MiB | `6e85e0905459382c50017e80b48af24a793c2d3118208f7cb8c43ef14363e06c` |
+          | **macOS 11+ Universal** | `YIVPN_1.0.4_universal.dmg` | 65.47 MiB | `c7c12af7da5ce09af912c2e1a47e97b252cb1f3a95628b194bc23022cac97c1e` |
+          | **Android 7.0+ (ARM64)** | `YIVPN-Android-1.0.4-arm64-v8a.apk` | 86.32 MiB | `040b52d03fe631f5972c1c07ef319946b29ed4bbe7baedf1d58786531b141d6c` |
+
+          - **Official Website**: [https://yivpn.net/en/](https://yivpn.net/en/)
+          - **Download & Verification Guide**: [https://yivpn.net/en/download/](https://yivpn.net/en/download/)
+          EOF
+
+      - name: Publish GitHub Release as github-actions[bot]
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="${{ inputs.tag }}"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" dist/* --clobber
+            gh release edit "$TAG" --title "YIVPN $TAG (Windows, macOS & Android)" --notes-file release-notes.md
+          else
+            gh release create "$TAG" dist/* --title "YIVPN $TAG (Windows, macOS & Android)" --notes-file release-notes.md --latest
+          fi

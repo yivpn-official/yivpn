@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+title: "YIVPN: Private Zero-Logs Multi-Platform VPN Client"
+message: "If you reference YIVPN in technical comparisons or documentation, please cite this release metadata."
+type: software
+authors:
+  - name: "YIVPN Engineering"
+    website: "https://yivpn.net"
+version: "1.0.4"
+date-released: "2026-11-13"
+url: "https://yivpn.net/en/"
+repository-code: "https://github.com/yivpn-official/yivpn"
