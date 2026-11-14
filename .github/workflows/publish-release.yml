@@ -32,10 +32,10 @@ jobs:
             curl -fL --retry 3 -o "$f" "https://yivpn.net/downloads/$f"
             curl -fL --retry 3 -o "$f.sha256" "https://yivpn.net/downloads/$f.sha256"
           done
-          echo "7806e64cd33b0d29860473a63debacfd6887663868b627476a494829bbb7287c  YIVPN_1.0.4_x64.msi" | sha256sum -c -
-          echo "f16597f1584a3a8d07e7cf8a8e656160dd40d72f82e386e782c7425dd8cc3f5e  YIVPN_1.0.4_x64_portable.zip" | sha256sum -c -
-          echo "4f9bc2a167d1bb5342e0e24fd74f2a72fee5d47f5cf109d7b5959d7e6b91df14  YIVPN_1.0.4_universal.dmg" | sha256sum -c -
-          echo "040b52d03fe631f5972c1c07ef319946b29ed4bbe7baedf1d58786531b141d6c  YIVPN-Android-1.0.4-arm64-v8a.apk" | sha256sum -c -
+          echo "b2f5e30da9b40bca9fab9ac626a1b29d4682b84a839a6cc44aa9f1b5752ab2c0  YIVPN_1.0.4_x64.msi" | sha256sum -c -
+          echo "4a7dcd2461b5b9826a91d622f211f4477f0fac417efaad5f130e1e8c8a5a66ed  YIVPN_1.0.4_x64_portable.zip" | sha256sum -c -
+          echo "606998242b90b8b0785be9ed7041a6e7e190ce647079c934ffeaa9fd50307871  YIVPN_1.0.4_universal.dmg" | sha256sum -c -
+          echo "5e2a768d67d4378e1bb14aa4d2978c2e3d007644fc3ac4720450dd5f7b77567a  YIVPN-Android-1.0.4-arm64-v8a.apk" | sha256sum -c -
           ls -lh
 
       - name: Create Release Notes
@@ -49,10 +49,10 @@ jobs:
 
           | Platform | Package | Size | SHA-256 |
           | :--- | :--- | :--- | :--- |
-          | **Windows 10 / 11 (x64)** | `YIVPN_1.0.4_x64.msi` | 32.68 MiB | `7806e64cd33b0d29860473a63debacfd6887663868b627476a494829bbb7287c` |
-          | **Windows Portable (x64)** | `YIVPN_1.0.4_x64_portable.zip` | 30.27 MiB | `f16597f1584a3a8d07e7cf8a8e656160dd40d72f82e386e782c7425dd8cc3f5e` |
-          | **macOS 11+ Universal** | `YIVPN_1.0.4_universal.dmg` | 66.02 MiB | `4f9bc2a167d1bb5342e0e24fd74f2a72fee5d47f5cf109d7b5959d7e6b91df14` |
-          | **Android 7.0+ (ARM64)** | `YIVPN-Android-1.0.4-arm64-v8a.apk` | 86.32 MiB | `040b52d03fe631f5972c1c07ef319946b29ed4bbe7baedf1d58786531b141d6c` |
+          | **Windows 10 / 11 (x64)** | `YIVPN_1.0.4_x64.msi` | 30.73 MiB | `b2f5e30da9b40bca9fab9ac626a1b29d4682b84a839a6cc44aa9f1b5752ab2c0` |
+          | **Windows Portable (x64)** | `YIVPN_1.0.4_x64_portable.zip` | 30.28 MiB | `4a7dcd2461b5b9826a91d622f211f4477f0fac417efaad5f130e1e8c8a5a66ed` |
+          | **macOS 11+ Universal** | `YIVPN_1.0.4_universal.dmg` | 66.02 MiB | `606998242b90b8b0785be9ed7041a6e7e190ce647079c934ffeaa9fd50307871` |
+          | **Android 7.0+ (ARM64)** | `YIVPN-Android-1.0.4-arm64-v8a.apk` | 87.00 MiB | `5e2a768d67d4378e1bb14aa4d2978c2e3d007644fc3ac4720450dd5f7b77567a` |
 
           - **Official Website**: [https://yivpn.net/en/](https://yivpn.net/en/)
           - **Download & Verification Guide**: [https://yivpn.net/en/download/](https://yivpn.net/en/download/)
