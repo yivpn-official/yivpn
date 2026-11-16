@@ -32,7 +32,7 @@ jobs:
             curl -fL --retry 3 -o "$f" "https://yivpn.net/downloads/$f"
             curl -fL --retry 3 -o "$f.sha256" "https://yivpn.net/downloads/$f.sha256"
           done
-          curl -fL --retry 3 -o "YIVPN_1.0.5_x64.msi.sig" "https://aicross.org/wawa-api/downloads/YIVPN_1.0.5_x64.msi.sig"
+          curl -fL --retry 3 -o "YIVPN_1.0.5_x64.msi.sig" "https://yivpn.net/downloads/YIVPN_1.0.5_x64.msi.sig"
           curl -fL --retry 3 -o "latest.json" "https://yivpn.net/downloads/latest.json"
           echo "c19190ac3638922b2afd6d53f1dcb5565070c67ef6e68566e61eeee4b15d3d43  YIVPN_1.0.5_x64.msi" | sha256sum -c -
           echo "ec198b0e35d7866c77f902a791dc80ca33d2e360fa2e082d31b2369f26a54ec2  YIVPN_1.0.5_x64_portable.zip" | sha256sum -c -
