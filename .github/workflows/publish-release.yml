@@ -6,7 +6,7 @@ on:
       tag:
         description: 'Release tag to publish'
         required: true
-        default: 'v1.0.4'
+        default: 'v1.0.5'
 
 permissions:
   contents: write
@@ -17,47 +17,48 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fetch and cryptographically verify official v1.0.4 binaries
+      - name: Fetch and cryptographically verify official v1.0.5 binaries & updater artifacts
         run: |
           mkdir -p dist
           cd dist
           FILES=(
-            "YIVPN_1.0.4_x64.msi"
-            "YIVPN_1.0.4_x64_portable.zip"
-            "YIVPN_1.0.4_universal.dmg"
-            "YIVPN-Android-1.0.4-arm64-v8a.apk"
+            "YIVPN_1.0.5_x64.msi"
+            "YIVPN_1.0.5_x64_portable.zip"
+            "YIVPN_1.0.5_universal.dmg"
+            "YIVPN-Android-1.0.5-arm64-v8a.apk"
           )
           for f in "${FILES[@]}"; do
             echo "Downloading $f ..."
             curl -fL --retry 3 -o "$f" "https://yivpn.net/downloads/$f"
             curl -fL --retry 3 -o "$f.sha256" "https://yivpn.net/downloads/$f.sha256"
           done
-          echo "b2f5e30da9b40bca9fab9ac626a1b29d4682b84a839a6cc44aa9f1b5752ab2c0  YIVPN_1.0.4_x64.msi" | sha256sum -c -
-          echo "4a7dcd2461b5b9826a91d622f211f4477f0fac417efaad5f130e1e8c8a5a66ed  YIVPN_1.0.4_x64_portable.zip" | sha256sum -c -
-          echo "606998242b90b8b0785be9ed7041a6e7e190ce647079c934ffeaa9fd50307871  YIVPN_1.0.4_universal.dmg" | sha256sum -c -
-          echo "5e2a768d67d4378e1bb14aa4d2978c2e3d007644fc3ac4720450dd5f7b77567a  YIVPN-Android-1.0.4-arm64-v8a.apk" | sha256sum -c -
+          curl -fL --retry 3 -o "YIVPN_1.0.5_x64.msi.sig" "https://aicross.org/wawa-api/downloads/YIVPN_1.0.5_x64.msi.sig"
+          curl -fL --retry 3 -o "latest.json" "https://yivpn.net/downloads/latest.json"
+          echo "c19190ac3638922b2afd6d53f1dcb5565070c67ef6e68566e61eeee4b15d3d43  YIVPN_1.0.5_x64.msi" | sha256sum -c -
+          echo "ec198b0e35d7866c77f902a791dc80ca33d2e360fa2e082d31b2369f26a54ec2  YIVPN_1.0.5_x64_portable.zip" | sha256sum -c -
+          echo "4a8bab0f4c52edbf5519dbb56c7c59f0094807b216580bca32e73d3cc0924939  YIVPN_1.0.5_universal.dmg" | sha256sum -c -
+          echo "87ef7f5893bc330623ca9e12e9c9f84e77bcc02ef5fd8115357eae545ce11bf4  YIVPN-Android-1.0.5-arm64-v8a.apk" | sha256sum -c -
           ls -lh
 
       - name: Create Release Notes
         run: |
           cat << 'EOF' > release-notes.md
-          ## YIVPN v1.0.4 — Official Multi-Platform Release (with Local MCP Server)
+          ## YIVPN v1.0.5 — Official 20-Language Multi-Platform Release
 
-          Official zero-logs VPN client built on `sing-box 1.14.3` (`Hysteria2` & `VLESS+REALITY`) with **90 minutes of free daily protection** (no sign-up or card required), **12 native languages**, and an opt-in **Local MCP Server** (`127.0.0.1:38419/mcp` + `stdio` bridge) for Claude Code, OpenAI Codex, and Cursor on Windows & macOS.
+          Official zero-logs VPN client built on `sing-box 1.14.3` (`Hysteria2`, `VLESS+REALITY`, & `AnyTLS`) with **90 minutes of free daily protection** (no sign-up or card required), **20 native auto-detected languages** (including Arabic & Persian RTL layout), signed Windows MSI in-app updates, and an opt-in **Local MCP Server** (`127.0.0.1:38419/mcp` + `stdio` bridge) for Claude Code, OpenAI Codex, and Cursor.
 
           ### Checksums (SHA-256)
 
           | Platform | Package | Size | SHA-256 |
           | :--- | :--- | :--- | :--- |
-          | **Windows 10 / 11 (x64)** | `YIVPN_1.0.4_x64.msi` | 30.73 MiB | `b2f5e30da9b40bca9fab9ac626a1b29d4682b84a839a6cc44aa9f1b5752ab2c0` |
-          | **Windows Portable (x64)** | `YIVPN_1.0.4_x64_portable.zip` | 30.28 MiB | `4a7dcd2461b5b9826a91d622f211f4477f0fac417efaad5f130e1e8c8a5a66ed` |
-          | **macOS 11+ Universal** | `YIVPN_1.0.4_universal.dmg` | 66.02 MiB | `606998242b90b8b0785be9ed7041a6e7e190ce647079c934ffeaa9fd50307871` |
-          | **Android 7.0+ (ARM64)** | `YIVPN-Android-1.0.4-arm64-v8a.apk` | 87.00 MiB | `5e2a768d67d4378e1bb14aa4d2978c2e3d007644fc3ac4720450dd5f7b77567a` |
+          | **Windows 10 / 11 (x64)** | `YIVPN_1.0.5_x64.msi` | 30.80 MiB | `c19190ac3638922b2afd6d53f1dcb5565070c67ef6e68566e61eeee4b15d3d43` |
+          | **Windows Portable (x64)** | `YIVPN_1.0.5_x64_portable.zip` | 30.34 MiB | `ec198b0e35d7866c77f902a791dc80ca33d2e360fa2e082d31b2369f26a54ec2` |
+          | **macOS 11+ Universal** | `YIVPN_1.0.5_universal.dmg` | 66.17 MiB | `4a8bab0f4c52edbf5519dbb56c7c59f0094807b216580bca32e73d3cc0924939` |
+          | **Android 7.0+ (ARM64)** | `YIVPN-Android-1.0.5-arm64-v8a.apk` | 87.07 MiB | `87ef7f5893bc330623ca9e12e9c9f84e77bcc02ef5fd8115357eae545ce11bf4` |
 
-          - **Official Website**: [https://yivpn.net/en/](https://yivpn.net/en/)
+          - **Official Website (20 Languages)**: [https://yivpn.net/en/](https://yivpn.net/en/)
           - **Download & Verification Guide**: [https://yivpn.net/en/download/](https://yivpn.net/en/download/)
-          - **Local VPN MCP Server Guide**: [https://yivpn.net/en/vpn-mcp/](https://yivpn.net/en/vpn-mcp/)
-          - **Zero-Account Agent VPN API & CLI**: [https://yivpn.net/en/vpn-api/](https://yivpn.net/en/vpn-api/) · [yivpn-agent-cli](https://github.com/yivpn-official/yivpn-agent-cli)
+          - **Unified AI & VPN API / MCP Hub**: [https://yivpn.net/en/vpn-api/](https://yivpn.net/en/vpn-api/) · [yivpn-agent-cli](https://github.com/yivpn-official/yivpn-agent-cli)
           EOF
 
       - name: Publish GitHub Release as github-actions[bot]
@@ -67,7 +68,7 @@ jobs:
           TAG="${{ inputs.tag }}"
           if gh release view "$TAG" >/dev/null 2>&1; then
             gh release upload "$TAG" dist/* --clobber
-            gh release edit "$TAG" --title "YIVPN $TAG (Windows, macOS & Android)" --notes-file release-notes.md
+            gh release edit "$TAG" --title "YIVPN $TAG (Windows, macOS & Android · 20 Languages)" --notes-file release-notes.md
           else
-            gh release create "$TAG" dist/* --title "YIVPN $TAG (Windows, macOS & Android)" --notes-file release-notes.md --latest
+            gh release create "$TAG" dist/* --title "YIVPN $TAG (Windows, macOS & Android · 20 Languages)" --notes-file release-notes.md --latest
           fi

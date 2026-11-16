@@ -4,10 +4,10 @@ import assert from 'node:assert/strict';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const manifestPath = path.resolve(__dirname, '../manifest/releases-v1.0.4.json');
+const manifestPath = path.resolve(__dirname, '../manifest/releases-v1.0.5.json');
 const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
 
-assert.equal(manifest.version, '1.0.4');
+assert.equal(manifest.version, '1.0.5');
 assert.equal(manifest.packages.length, 4);
 
 for (const pkg of manifest.packages) {
