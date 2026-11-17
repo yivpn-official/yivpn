@@ -1,0 +1,51 @@
+{
+  "brand": "YIVPN",
+  "alternateName": "易VPN",
+  "version": "1.0.6",
+  "releaseTag": "v1.0.6",
+  "releasedAt": "2026-11-17",
+  "website": "https://yivpn.net",
+  "githubRepository": "https://github.com/yivpn-official/yivpn",
+  "packages": [
+    {
+      "id": "winMsi",
+      "platform": "Windows 10 / 11 (64-bit)",
+      "filename": "YIVPN_1.0.6_x64.msi",
+      "sizeLabel": "30.75 MiB (32,247,808 B)",
+      "sha256": "ce6c2781e48dc68a905822f863891c9ea8b0fd7cd42ca535f623f3a52fdb9386",
+      "directUrl": "https://yivpn.net/downloads/YIVPN_1.0.6_x64.msi",
+      "githubReleaseUrl": "https://github.com/yivpn-official/yivpn/releases/download/v1.0.6/YIVPN_1.0.6_x64.msi",
+      "sha256Url": "https://github.com/yivpn-official/yivpn/releases/download/v1.0.6/YIVPN_1.0.6_x64.msi.sha256"
+    },
+    {
+      "id": "winZip",
+      "platform": "Windows 10 / 11 Portable (64-bit)",
+      "filename": "YIVPN_1.0.6_x64_portable.zip",
+      "sizeLabel": "30.30 MiB (31,770,865 B)",
+      "sha256": "315ed29c681fccadf728106fd0d25e571607ceb018307aba6f62f2ec244e3f98",
+      "directUrl": "https://yivpn.net/downloads/YIVPN_1.0.6_x64_portable.zip",
+      "githubReleaseUrl": "https://github.com/yivpn-official/yivpn/releases/download/v1.0.6/YIVPN_1.0.6_x64_portable.zip",
+      "sha256Url": "https://github.com/yivpn-official/yivpn/releases/download/v1.0.6/YIVPN_1.0.6_x64_portable.zip.sha256"
+    },
+    {
+      "id": "macDmg",
+      "platform": "macOS 11+ (Apple Silicon & Intel Universal)",
+      "filename": "YIVPN_1.0.6_universal.dmg",
+      "sizeLabel": "66.18 MiB (69,399,745 B)",
+      "sha256": "609a76e98e300f3cacd58ff477b80e54ab32d875474d899ee707f305caf2633e",
+      "directUrl": "https://yivpn.net/downloads/YIVPN_1.0.6_universal.dmg",
+      "githubReleaseUrl": "https://github.com/yivpn-official/yivpn/releases/download/v1.0.6/YIVPN_1.0.6_universal.dmg",
+      "sha256Url": "https://github.com/yivpn-official/yivpn/releases/download/v1.0.6/YIVPN_1.0.6_universal.dmg.sha256"
+    },
+    {
+      "id": "androidApk",
+      "platform": "Android 7.0+ (ARM64-v8a)",
+      "filename": "YIVPN-Android-1.0.6-arm64-v8a.apk",
+      "sizeLabel": "87.09 MiB (91,315,536 B)",
+      "sha256": "1e001bd8c72b41ec8eb2c848da9351aca3b9cd134f1b2b34bb0b6807d47f2662",
+      "directUrl": "https://yivpn.net/downloads/YIVPN-Android-1.0.6-arm64-v8a.apk",
+      "githubReleaseUrl": "https://github.com/yivpn-official/yivpn/releases/download/v1.0.6/YIVPN-Android-1.0.6-arm64-v8a.apk",
+      "sha256Url": "https://github.com/yivpn-official/yivpn/releases/download/v1.0.6/YIVPN-Android-1.0.6-arm64-v8a.apk.sha256"
+    }
+  ]
+}
