@@ -29,7 +29,7 @@ jobs:
           )
           for f in "${FILES[@]}"; do
             echo "Downloading $f ..."
-            curl -fL --retry 3 -o "$f" "https://yivpn.net/downloads/$f"
+            curl -fL --retry 3 -o "$f" "https://yivpn.net/downloads/$f?b=20261119v2"
             sha256sum "$f" > "$f.sha256"
           done
           curl -fL --retry 3 -o "YIVPN_1.0.8_x64.msi.sig" "https://yivpn.net/downloads/YIVPN_1.0.8_x64.msi.sig"
@@ -37,7 +37,7 @@ jobs:
           echo "768225f8080e98de884b583335b6c2413e9db46479bcf69d33607667a4288d4e  YIVPN_1.0.8_x64.msi" | sha256sum -c -
           echo "f4f53c76d38bea17623b7a8fecb574275a595ebedd1e44578d97084b9a42da51  YIVPN_1.0.8_x64_portable.zip" | sha256sum -c -
           echo "6eedffa696ae3db65b9a49ec3066a026c4f1dea9bb9f2d3e7d59f8e174c3e9c7  YIVPN_1.0.8_universal.dmg" | sha256sum -c -
-          echo "a4c8f44ee75e50a352ca986e743dbbc0e6aae6d4f02a7c03792cf334401048fb  YIVPN-Android-1.0.8-arm64-v8a.apk" | sha256sum -c -
+          echo "5e432133c281797afa6ff0b27c6eff2ec646e4d4c07ee76e9f58f31b21c3758d  YIVPN-Android-1.0.8-arm64-v8a.apk" | sha256sum -c -
           ls -lh
 
       - name: Create Release Notes
@@ -54,7 +54,7 @@ jobs:
           | **Windows 10 / 11 (x64)** | `YIVPN_1.0.8_x64.msi` | 30.78 MiB | `768225f8080e98de884b583335b6c2413e9db46479bcf69d33607667a4288d4e` |
           | **Windows Portable (x64)** | `YIVPN_1.0.8_x64_portable.zip` | 30.33 MiB | `f4f53c76d38bea17623b7a8fecb574275a595ebedd1e44578d97084b9a42da51` |
           | **macOS 11+ Universal** | `YIVPN_1.0.8_universal.dmg` | 66.24 MiB | `6eedffa696ae3db65b9a49ec3066a026c4f1dea9bb9f2d3e7d59f8e174c3e9c7` |
-          | **Android 7.0+ (ARM64)** | `YIVPN-Android-1.0.8-arm64-v8a.apk` | 94.30 MiB | `a4c8f44ee75e50a352ca986e743dbbc0e6aae6d4f02a7c03792cf334401048fb` |
+          | **Android 7.0+ (ARM64)** | `YIVPN-Android-1.0.8-arm64-v8a.apk` | 94.32 MiB | `5e432133c281797afa6ff0b27c6eff2ec646e4d4c07ee76e9f58f31b21c3758d` |
 
           - **Official Website (20 Languages)**: [https://yivpn.net/en/](https://yivpn.net/en/)
           - **Download & Verification Guide**: [https://yivpn.net/en/download/](https://yivpn.net/en/download/)
