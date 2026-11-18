@@ -40,12 +40,12 @@
     {
       "id": "androidApk",
       "platform": "Android 7.0+ (ARM64-v8a)",
-      "filename": "YIVPN-Android-1.0.7-arm64-v8a.apk",
-      "sizeLabel": "87.09 MiB (91,319,632 B)",
-      "sha256": "f226dad3b04dafe6097196283dacb9d013abb247421375dbe666e27a619fd4f2",
-      "directUrl": "https://yivpn.net/downloads/YIVPN-Android-1.0.7-arm64-v8a.apk",
-      "githubReleaseUrl": "https://github.com/yivpn-official/yivpn/releases/download/v1.0.8/YIVPN-Android-1.0.7-arm64-v8a.apk",
-      "sha256Url": "https://github.com/yivpn-official/yivpn/releases/download/v1.0.8/YIVPN-Android-1.0.7-arm64-v8a.apk.sha256"
+      "filename": "YIVPN-Android-1.0.8-arm64-v8a.apk",
+      "sizeLabel": "94.30 MiB (98,882,839 B)",
+      "sha256": "a4c8f44ee75e50a352ca986e743dbbc0e6aae6d4f02a7c03792cf334401048fb",
+      "directUrl": "https://yivpn.net/downloads/YIVPN-Android-1.0.8-arm64-v8a.apk",
+      "githubReleaseUrl": "https://github.com/yivpn-official/yivpn/releases/download/v1.0.8/YIVPN-Android-1.0.8-arm64-v8a.apk",
+      "sha256Url": "https://github.com/yivpn-official/yivpn/releases/download/v1.0.8/YIVPN-Android-1.0.8-arm64-v8a.apk.sha256"
     }
   ]
 }
