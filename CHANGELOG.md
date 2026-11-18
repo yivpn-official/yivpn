@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.8 (2026-11-18)
+
+- **Multi-Hop Chain Proxy Modal & Residential Proxy Support**: Dedicated Chain Proxy configuration modal across platforms supporting `SOCKS5`, `HTTP`, `VLESS`, `Hysteria2`, `Trojan`, `Shadowsocks`, and `VMess` exit nodes alongside subscription URLs.
+- **Editable Domestic & Forced-Proxy Routing Rules**: Two-tab visual routing editor for custom direct-bypass domains/CIDRs and high-priority forced-VPN overrides, plus DNS-level ad & tracker blocking across platforms.
+- **Refined Default Light Stage UI & Single-Screen Account View**: Crisp default Porcelain light appearance, compact single-screen grouped Account Details layout, and 60-second OTP resend protection.
+
 ## v1.0.6 (2026-11-17)
 
 - **Full-Stack Security Hardening**: Strict Tauri & Web CSP, privilege-separated macOS SUID TUN helper (`root:wheel 0755` fixed path validation), DNS leak prevention before private CIDR bypass (`sniff` + `hijack-dns`), constant-time MCP loopback auth, and Android `FLAG_SECURE` + notification privacy redaction.

@@ -6,7 +6,7 @@ on:
       tag:
         description: 'Release tag to publish'
         required: true
-        default: 'v1.0.7'
+        default: 'v1.0.8'
 
 permissions:
   contents: write
@@ -17,33 +17,33 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fetch and cryptographically verify official v1.0.7 binaries & updater artifacts
+      - name: Fetch and cryptographically verify official v1.0.8 binaries & updater artifacts
         run: |
           mkdir -p dist
           cd dist
           FILES=(
-            "YIVPN_1.0.7_x64.msi"
-            "YIVPN_1.0.7_x64_portable.zip"
-            "YIVPN_1.0.7_universal.dmg"
+            "YIVPN_1.0.8_x64.msi"
+            "YIVPN_1.0.8_x64_portable.zip"
+            "YIVPN_1.0.8_universal.dmg"
             "YIVPN-Android-1.0.7-arm64-v8a.apk"
           )
           for f in "${FILES[@]}"; do
             echo "Downloading $f ..."
             curl -fL --retry 3 -o "$f" "https://yivpn.net/downloads/$f"
-            curl -fL --retry 3 -o "$f.sha256" "https://yivpn.net/downloads/$f.sha256"
+            sha256sum "$f" > "$f.sha256"
           done
-          curl -fL --retry 3 -o "YIVPN_1.0.7_x64.msi.sig" "https://yivpn.net/downloads/YIVPN_1.0.7_x64.msi.sig"
+          curl -fL --retry 3 -o "YIVPN_1.0.8_x64.msi.sig" "https://yivpn.net/downloads/YIVPN_1.0.8_x64.msi.sig"
           curl -fL --retry 3 -o "latest.json" "https://yivpn.net/downloads/latest.json"
-          echo "99a88f7388fa28ada174bdc69b8919d1fd2d99d03e3d8f51565597a0d019ea86  YIVPN_1.0.7_x64.msi" | sha256sum -c -
-          echo "79f1f6269cc481c70ff87c993e23d5f3f99400eda4c5713e8229084d51b5fd61  YIVPN_1.0.7_x64_portable.zip" | sha256sum -c -
-          echo "d0f6e1ef25f4d64676f45ef40373fa6af6f8fdac0aebe36af98acf0b27464ac6  YIVPN_1.0.7_universal.dmg" | sha256sum -c -
+          echo "768225f8080e98de884b583335b6c2413e9db46479bcf69d33607667a4288d4e  YIVPN_1.0.8_x64.msi" | sha256sum -c -
+          echo "f4f53c76d38bea17623b7a8fecb574275a595ebedd1e44578d97084b9a42da51  YIVPN_1.0.8_x64_portable.zip" | sha256sum -c -
+          echo "6eedffa696ae3db65b9a49ec3066a026c4f1dea9bb9f2d3e7d59f8e174c3e9c7  YIVPN_1.0.8_universal.dmg" | sha256sum -c -
           echo "f226dad3b04dafe6097196283dacb9d013abb247421375dbe666e27a619fd4f2  YIVPN-Android-1.0.7-arm64-v8a.apk" | sha256sum -c -
           ls -lh
 
       - name: Create Release Notes
         run: |
           cat << 'EOF' > release-notes.md
-          ## YIVPN v1.0.7 — Official 20-Language Multi-Platform Release
+          ## YIVPN v1.0.8 — Official 20-Language Multi-Platform Release
 
           Official zero-logs VPN client built on `sing-box 1.14.3` (`Hysteria2`, `VLESS+REALITY`, & `AnyTLS`) with **90 minutes of free daily protection** (no sign-up or card required), **20 native auto-detected languages** (including Arabic & Persian RTL layout), signed Windows MSI in-app updates, and an opt-in **Local MCP Server** (`127.0.0.1:38419/mcp` + `stdio` bridge) for Claude Code, OpenAI Codex, and Cursor.
 
@@ -51,9 +51,9 @@ jobs:
 
           | Platform | Package | Size | SHA-256 |
           | :--- | :--- | :--- | :--- |
-          | **Windows 10 / 11 (x64)** | `YIVPN_1.0.7_x64.msi` | 30.75 MiB | `99a88f7388fa28ada174bdc69b8919d1fd2d99d03e3d8f51565597a0d019ea86` |
-          | **Windows Portable (x64)** | `YIVPN_1.0.7_x64_portable.zip` | 30.30 MiB | `79f1f6269cc481c70ff87c993e23d5f3f99400eda4c5713e8229084d51b5fd61` |
-          | **macOS 11+ Universal** | `YIVPN_1.0.7_universal.dmg` | 66.18 MiB | `d0f6e1ef25f4d64676f45ef40373fa6af6f8fdac0aebe36af98acf0b27464ac6` |
+          | **Windows 10 / 11 (x64)** | `YIVPN_1.0.8_x64.msi` | 30.78 MiB | `768225f8080e98de884b583335b6c2413e9db46479bcf69d33607667a4288d4e` |
+          | **Windows Portable (x64)** | `YIVPN_1.0.8_x64_portable.zip` | 30.33 MiB | `f4f53c76d38bea17623b7a8fecb574275a595ebedd1e44578d97084b9a42da51` |
+          | **macOS 11+ Universal** | `YIVPN_1.0.8_universal.dmg` | 66.24 MiB | `6eedffa696ae3db65b9a49ec3066a026c4f1dea9bb9f2d3e7d59f8e174c3e9c7` |
           | **Android 7.0+ (ARM64)** | `YIVPN-Android-1.0.7-arm64-v8a.apk` | 87.09 MiB | `f226dad3b04dafe6097196283dacb9d013abb247421375dbe666e27a619fd4f2` |
 
           - **Official Website (20 Languages)**: [https://yivpn.net/en/](https://yivpn.net/en/)
