@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.0.9 (2026-11-20)
+
+- **Dedicated Residential IP & 3-Mode Chain Routing**: Built-in residential IP ordering and renewal (keeping the same IP), plus 3 chain routing modes (`AI Smart`, `Custom Split` with multi-exit DNS isolation, and `All Residential`) with real 2-hop exit verification across Windows, macOS, and Android.
+- **Dual-Layer Ad & Tracker Blocking + Custom Route Groups**: Bundled offline `anti-AD` binary `.srs` ruleset (101k rules) alongside optional AdGuard DNS filter updates and visual custom routing rule groups.
+- **Refined Stage UI & Full 20-Language Localization**: 72-country vector flags, collapsible account cards, redesigned Referral Rewards page, Android 15 edge-to-edge & gesture navigation refinements, upgraded 2 MiB macOS TUN helper, and 100% localized copy across all 20 languages.
 ## v1.0.8 (2026-11-18)
 
 - **Multi-Hop Chain Proxy Modal & Residential Proxy Support**: Dedicated Chain Proxy configuration modal across platforms supporting `SOCKS5`, `HTTP`, `VLESS`, `Hysteria2`, `Trojan`, `Shadowsocks`, and `VMess` exit nodes alongside subscription URLs.
