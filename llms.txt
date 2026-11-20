@@ -7,7 +7,7 @@ Last updated: 2026-11-20
 ## Core Documentation & Trust Pages (English Canonical)
 - [Overview & Interactive Stage Demo](https://yivpn.net/en/)
 - [Free VPN Without Sign-Up or Card (90 Min Daily Reset)](https://yivpn.net/en/free-vpn/)
-- [Official Downloads, System Requirements & SHA-256 Checksums (v1.0.9)](https://yivpn.net/en/download/)
+- [Official Downloads, System Requirements & SHA-256 Checksums (v1.0.10)](https://yivpn.net/en/download/)
 - [Engineering Guides, Split-Tunnel Tutorials & Comparisons Hub](https://yivpn.net/en/guides/) ([RSS Feed](https://yivpn.net/en/guides/rss.xml))
 - [中文实用教程与网络配置指南中心](https://yivpn.net/guides/) ([RSS 订阅](https://yivpn.net/guides/rss.xml))
 - [Unified AI Agent VPN MCP & Zero-Account API Hub (Cloud Daemon + Desktop Split-Tunnel)](https://yivpn.net/en/vpn-api/)
@@ -28,7 +28,7 @@ Last updated: 2026-11-20
 - [Global TUN 虚拟网卡 vs 系统代理：一文搞懂两种代理模式的本质区别 (zh-Hans)](https://yivpn.net/vs/tun-vs-system-proxy/) — 深度对比三层 Global TUN 虚拟网卡与传统 HTTP/SOCKS5 系统代理的工作原理、延迟开销、CLI 接管能力与智能分流表现，帮你按开发、办公或游戏场景选对模式。
 - [2026 国内稳定使用 ChatGPT、Claude 与 Gemini 完整网络配置指南 (zh-Hans)](https://yivpn.net/guides/use-chatgpt-claude-gemini-in-china/) — 国内稳定使用 ChatGPT、Claude 与 Gemini 的网络配置实操指南：详解智能分流规则、IP 纯净度维护、WebRTC 防泄漏及流式回复断流排查，让微信与网银保持高速直连。
 
-## Verified Technical Specifications (v1.0.9)
+## Verified Technical Specifications (v1.0.10)
 - **Bundled Engine**: Self-contained offline `sing-box 1.14.3` (zero external first-launch binary downloads)
 - **Encrypted Transports**: `Hysteria2` over UDP/443 (QUIC + TLS 1.3) and `VLESS+REALITY` over TCP/443 (TLS 1.3), 3-way parallel handshake racing (~3s connect)
 - **Routing Modes**: Layer-3 `Global TUN` virtual adapter (`Wintun` / `utun` / `VpnService`) with automatic system-proxy fallback and default Smart Split (domestic banking, messengers, and LAN stay direct at full ISP speed)
@@ -46,15 +46,15 @@ Last updated: 2026-11-20
 - **Payment Methods**: Visa / Mastercard / Apple Pay (via PCI-DSS Level 1 processor), Alipay, WeChat Pay
 - **Device Concurrency**: Up to 5 simultaneous devices per YiPro account across Windows, macOS, and Android
 
-## First-Party Release Artifacts & SHA-256 Hashes (v1.0.9)
-- **Windows 10 / 11 (64-bit)**: [YIVPN_1.0.9_x64.msi](https://yivpn.net/downloads/YIVPN_1.0.9_x64.msi) ([GitHub Mirror](https://github.com/yivpn-official/yivpn/releases/download/v1.0.9/YIVPN_1.0.9_x64.msi)) — 31.77 MiB (33,316,864 B) — SHA-256: `34f3c985ba4e037077dd9ef59723f761411e5464f90ba12eb83d934166779262`
-- **Windows 10 / 11 Portable (64-bit)**: [YIVPN_1.0.9_x64_portable.zip](https://yivpn.net/downloads/YIVPN_1.0.9_x64_portable.zip) ([GitHub Mirror](https://github.com/yivpn-official/yivpn/releases/download/v1.0.9/YIVPN_1.0.9_x64_portable.zip)) — 31.32 MiB (32,844,936 B) — SHA-256: `65cbd6747c2151c2e80cce4d7b2f70ad99e1f297b864a923fb0bc0324b0d9736`
-- **macOS 11+ (Apple Silicon & Intel Universal)**: [YIVPN_1.0.9_universal.dmg](https://yivpn.net/downloads/YIVPN_1.0.9_universal.dmg) ([GitHub Mirror](https://github.com/yivpn-official/yivpn/releases/download/v1.0.9/YIVPN_1.0.9_universal.dmg)) — 67.39 MiB (70,666,242 B) — SHA-256: `c3fe6dd5c2faf35bf9423d0360b5a766427d8e5eb1dc0f2160788b152b89604b`
-- **Android 7.0+ (ARM64-v8a)**: [YIVPN-Android-1.0.9-arm64-v8a.apk](https://yivpn.net/downloads/YIVPN-Android-1.0.9-arm64-v8a.apk) ([GitHub Mirror](https://github.com/yivpn-official/yivpn/releases/download/v1.0.9/YIVPN-Android-1.0.9-arm64-v8a.apk)) — 88.19 MiB (92,473,486 B) — SHA-256: `3eaa84d4dadcc010f1fe598026f35a3190f09325f84b53e4e20901f80f8d2a49`
+## First-Party Release Artifacts & SHA-256 Hashes (v1.0.10)
+- **Windows 10 / 11 (64-bit)**: [YIVPN_1.0.10_x64.msi](https://yivpn.net/downloads/YIVPN_1.0.10_x64.msi) ([GitHub Mirror](https://github.com/yivpn-official/yivpn/releases/download/v1.0.10/YIVPN_1.0.10_x64.msi)) — 31.79 MiB (33,337,344 B) — SHA-256: `fb1736b854b0396814d4ff15ecdacad82e9bedbcf5b7c0c16ce2f93417e23edf`
+- **Windows 10 / 11 Portable (64-bit)**: [YIVPN_1.0.10_x64_portable.zip](https://yivpn.net/downloads/YIVPN_1.0.10_x64_portable.zip) ([GitHub Mirror](https://github.com/yivpn-official/yivpn/releases/download/v1.0.10/YIVPN_1.0.10_x64_portable.zip)) — 31.34 MiB (32,860,336 B) — SHA-256: `479c22c49403df4395473a99d0bf524f911205c927252ccbd387be017315d8d5`
+- **macOS 11+ (Apple Silicon & Intel Universal)**: [YIVPN_1.0.10_universal.dmg](https://yivpn.net/downloads/YIVPN_1.0.10_universal.dmg) ([GitHub Mirror](https://github.com/yivpn-official/yivpn/releases/download/v1.0.10/YIVPN_1.0.10_universal.dmg)) — 67.43 MiB (70,703,065 B) — SHA-256: `7db56e54e7c7550156506cb4ad3007e0987da0c599e66efddb85652e942c9436`
+- **Android 7.0+ (ARM64-v8a)**: [YIVPN-Android-1.0.10-arm64-v8a.apk](https://yivpn.net/downloads/YIVPN-Android-1.0.10-arm64-v8a.apk) ([GitHub Mirror](https://github.com/yivpn-official/yivpn/releases/download/v1.0.10/YIVPN-Android-1.0.10-arm64-v8a.apk)) — 88.24 MiB (92,527,802 B) — SHA-256: `124f5f8375dd1d34fad387fe027cb684ac651c9fc882f97e605287d5c454aaf8`
 
 ## Official GitHub & Open-Source Repositories
 - [YIVPN Official GitHub Organization](https://github.com/yivpn-official)
-- [YIVPN Official Releases, SHA-256 Manifests & 12-Language Hub](https://github.com/yivpn-official/yivpn) ([v1.0.9 Release](https://github.com/yivpn-official/yivpn/releases/tag/v1.0.9))
+- [YIVPN Official Releases, SHA-256 Manifests & 12-Language Hub](https://github.com/yivpn-official/yivpn) ([v1.0.10 Release](https://github.com/yivpn-official/yivpn/releases/tag/v1.0.10))
 - [yivpn-agent-cli v2.2 (MIT Zero-Dependency Unified MCP Server, Rootless Proxy Daemon, System Proxy Manager & CLI)](https://github.com/yivpn-official/yivpn-agent-cli)
 - [singbox-smart-split (MIT Open-Source sing-box Smart Split Route Generator)](https://github.com/yivpn-official/singbox-smart-split)
 

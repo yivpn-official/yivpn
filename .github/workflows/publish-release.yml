@@ -6,7 +6,7 @@ on:
       tag:
         description: 'Release tag to publish'
         required: true
-        default: 'v1.0.9'
+        default: 'v1.0.10'
 
 permissions:
   contents: write
@@ -17,44 +17,48 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fetch and cryptographically verify official v1.0.9 binaries & updater artifacts
+      - name: Fetch and cryptographically verify official v1.0.10 binaries & updater artifacts
         run: |
           mkdir -p dist
           cd dist
           FILES=(
-            "YIVPN_1.0.9_x64.msi"
-            "YIVPN_1.0.9_x64_portable.zip"
-            "YIVPN_1.0.9_universal.dmg"
-            "YIVPN-Android-1.0.9-arm64-v8a.apk"
+            "YIVPN_1.0.10_x64.msi"
+            "YIVPN_1.0.10_x64_portable.zip"
+            "YIVPN_1.0.10_universal.dmg"
+            "YIVPN_1.0.10_universal.app.tar.gz"
+            "YIVPN-Android-1.0.10-arm64-v8a.apk"
           )
           for f in "${FILES[@]}"; do
             echo "Downloading $f ..."
             curl -fL --retry 3 -o "$f" "https://yivpn.net/downloads/$f"
             sha256sum "$f" > "$f.sha256"
           done
-          curl -fL --retry 3 -o "YIVPN_1.0.9_x64.msi.sig" "https://yivpn.net/downloads/YIVPN_1.0.9_x64.msi.sig"
+          curl -fL --retry 3 -o "YIVPN_1.0.10_x64.msi.sig" "https://yivpn.net/downloads/YIVPN_1.0.10_x64.msi.sig"
+          curl -fL --retry 3 -o "YIVPN_1.0.10_universal.app.tar.gz.sig" "https://yivpn.net/downloads/YIVPN_1.0.10_universal.app.tar.gz.sig"
           curl -fL --retry 3 -o "latest.json" "https://yivpn.net/downloads/latest.json"
-          echo "34f3c985ba4e037077dd9ef59723f761411e5464f90ba12eb83d934166779262  YIVPN_1.0.9_x64.msi" | sha256sum -c -
-          echo "65cbd6747c2151c2e80cce4d7b2f70ad99e1f297b864a923fb0bc0324b0d9736  YIVPN_1.0.9_x64_portable.zip" | sha256sum -c -
-          echo "c3fe6dd5c2faf35bf9423d0360b5a766427d8e5eb1dc0f2160788b152b89604b  YIVPN_1.0.9_universal.dmg" | sha256sum -c -
-          echo "3eaa84d4dadcc010f1fe598026f35a3190f09325f84b53e4e20901f80f8d2a49  YIVPN-Android-1.0.9-arm64-v8a.apk" | sha256sum -c -
+          echo "fb1736b854b0396814d4ff15ecdacad82e9bedbcf5b7c0c16ce2f93417e23edf  YIVPN_1.0.10_x64.msi" | sha256sum -c -
+          echo "479c22c49403df4395473a99d0bf524f911205c927252ccbd387be017315d8d5  YIVPN_1.0.10_x64_portable.zip" | sha256sum -c -
+          echo "7db56e54e7c7550156506cb4ad3007e0987da0c599e66efddb85652e942c9436  YIVPN_1.0.10_universal.dmg" | sha256sum -c -
+          echo "44d82699666f4bd8ed02f3f502ed104653a11330449d729e3203c0ae1b9c76ef  YIVPN_1.0.10_universal.app.tar.gz" | sha256sum -c -
+          echo "124f5f8375dd1d34fad387fe027cb684ac651c9fc882f97e605287d5c454aaf8  YIVPN-Android-1.0.10-arm64-v8a.apk" | sha256sum -c -
           ls -lh
 
       - name: Create Release Notes
         run: |
           cat << 'EOF' > release-notes.md
-          ## YIVPN v1.0.9 — Official 20-Language Multi-Platform Release
+          ## YIVPN v1.0.10 — Official 20-Language Multi-Platform Release (Windows, macOS & Android In-App Auto-Update)
 
-          Official zero-logs VPN client built on `sing-box 1.14.3` (`Hysteria2`, `VLESS+REALITY`, & `AnyTLS`) with **90 minutes of free daily protection** (no sign-up or card required), **dedicated residential IP ordering & renewal**, **3-mode multi-hop chain routing**, **dual-layer anti-AD + AdGuard DNS ad blocking**, **custom routing rule groups**, **72-country vector flags**, **20 native auto-detected languages** (including Arabic & Persian RTL layout), signed Windows MSI in-app updates, and an opt-in **Local MCP Server** (`127.0.0.1:38419/mcp` + `stdio` bridge) for Claude Code, OpenAI Codex, and Cursor.
+          Official zero-logs VPN client built on `sing-box 1.14.3` (`Hysteria2`, `VLESS+REALITY`, & `AnyTLS`) with **90 minutes of free daily protection**, **dedicated residential IP ordering & renewal**, **3-mode multi-hop chain routing**, **dual-layer anti-AD + AdGuard DNS ad blocking**, **72-country vector flags**, **20 native auto-detected languages**, and **native in-app check & direct updates across Windows, macOS (signed Ed25519), and Android (SHA-256 verified)**.
 
           ### Checksums (SHA-256)
 
           | Platform | Package | Size | SHA-256 |
           | :--- | :--- | :--- | :--- |
-          | **Windows 10 / 11 (x64)** | `YIVPN_1.0.9_x64.msi` | 31.77 MiB | `34f3c985ba4e037077dd9ef59723f761411e5464f90ba12eb83d934166779262` |
-          | **Windows Portable (x64)** | `YIVPN_1.0.9_x64_portable.zip` | 31.32 MiB | `65cbd6747c2151c2e80cce4d7b2f70ad99e1f297b864a923fb0bc0324b0d9736` |
-          | **macOS 11+ Universal** | `YIVPN_1.0.9_universal.dmg` | 67.39 MiB | `c3fe6dd5c2faf35bf9423d0360b5a766427d8e5eb1dc0f2160788b152b89604b` |
-          | **Android 7.0+ (ARM64)** | `YIVPN-Android-1.0.9-arm64-v8a.apk` | 88.19 MiB | `3eaa84d4dadcc010f1fe598026f35a3190f09325f84b53e4e20901f80f8d2a49` |
+          | **Windows 10 / 11 (x64)** | `YIVPN_1.0.10_x64.msi` | 31.79 MiB | `fb1736b854b0396814d4ff15ecdacad82e9bedbcf5b7c0c16ce2f93417e23edf` |
+          | **Windows Portable (x64)** | `YIVPN_1.0.10_x64_portable.zip` | 31.34 MiB | `479c22c49403df4395473a99d0bf524f911205c927252ccbd387be017315d8d5` |
+          | **macOS 11+ Universal** | `YIVPN_1.0.10_universal.dmg` | 67.43 MiB | `7db56e54e7c7550156506cb4ad3007e0987da0c599e66efddb85652e942c9436` |
+          | **macOS Auto-Updater Bundle** | `YIVPN_1.0.10_universal.app.tar.gz` | 69.26 MiB | `44d82699666f4bd8ed02f3f502ed104653a11330449d729e3203c0ae1b9c76ef` |
+          | **Android 7.0+ (ARM64)** | `YIVPN-Android-1.0.10-arm64-v8a.apk` | 88.24 MiB | `124f5f8375dd1d34fad387fe027cb684ac651c9fc882f97e605287d5c454aaf8` |
 
           - **Official Website (20 Languages)**: [https://yivpn.net/en/](https://yivpn.net/en/)
           - **Download & Verification Guide**: [https://yivpn.net/en/download/](https://yivpn.net/en/download/)

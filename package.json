@@ -1,6 +1,6 @@
 {
   "name": "yivpn-releases",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "private": true,
   "type": "module",
   "description": "Official YIVPN multi-platform releases, SHA-256 checksum manifests, and 12-language documentation.",

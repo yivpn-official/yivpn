@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.10 (2026-11-20)
+
+- **Native In-App Check & Direct Update on macOS**: Signed Ed25519 universal `.app.tar.gz` updater packages with automatic in-app download progress, cryptographic verification, atomic bundle replacement, and one-click relaunch.
+- **Native In-App Check & Verified APK Update on Android (Website Channel)**: Automatic update checks against unified `latest.json`, in-app download progress bar, mandatory local SHA-256 verification, cached resume after permission toggle, and direct system installer launch via `FileProvider` (Google Play builds strictly omit `REQUEST_INSTALL_PACKAGES` and route updates through Play Store).
 ## v1.0.9 (2026-11-20)
 
 - **Dedicated Residential IP & 3-Mode Chain Routing**: Built-in residential IP ordering and renewal (keeping the same IP), plus 3 chain routing modes (`AI Smart`, `Custom Split` with multi-exit DNS isolation, and `All Residential`) with real 2-hop exit verification across Windows, macOS, and Android.
