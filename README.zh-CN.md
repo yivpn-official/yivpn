@@ -63,6 +63,7 @@ node scripts/verify-releases.mjs --remote
 - **每天免费 90 分钟（免注册免绑卡）**: [https://yivpn.net/free-vpn/](https://yivpn.net/free-vpn/)
 - **安全架构与零活动日志说明**: [https://yivpn.net/security/](https://yivpn.net/security/)
 - **隐私政策**: [https://yivpn.net/privacy/](https://yivpn.net/privacy/)
+- **20 语言实战教程与配置指南中心**: [https://yivpn.net/guides/](https://yivpn.net/guides/) · [github.com/yivpn-official/guides](https://github.com/yivpn-official/guides)
 - **Smart Split Rules (Open Source)**: [github.com/yivpn-official/singbox-smart-split](https://github.com/yivpn-official/singbox-smart-split)
 - **Local VPN MCP Server (Claude Code / Codex)**: [https://yivpn.net/vpn-mcp/](https://yivpn.net/vpn-mcp/)
 - **Agent VPN API & CLI (Open Source)**: [github.com/yivpn-official/yivpn-agent-cli](https://github.com/yivpn-official/yivpn-agent-cli)

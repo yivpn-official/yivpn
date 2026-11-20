@@ -63,6 +63,7 @@ node scripts/verify-releases.mjs --remote
 - **90-Min Daily Free VPN (No Sign-Up)**: [https://yivpn.net/en/free-vpn/](https://yivpn.net/en/free-vpn/)
 - **Zero-Logs & Security Architecture**: [https://yivpn.net/en/security/](https://yivpn.net/en/security/)
 - **Privacy Policy**: [https://yivpn.net/en/privacy/](https://yivpn.net/en/privacy/)
+- **Multilingual Networking & AI Proxy Guides (20 Languages)**: [https://yivpn.net/en/guides/](https://yivpn.net/en/guides/) · [github.com/yivpn-official/guides](https://github.com/yivpn-official/guides)
 - **Smart Split Rules (Open Source)**: [github.com/yivpn-official/singbox-smart-split](https://github.com/yivpn-official/singbox-smart-split)
 - **Local VPN MCP Server (Claude Code / Codex)**: [https://yivpn.net/en/vpn-mcp/](https://yivpn.net/en/vpn-mcp/)
 - **Agent VPN API & CLI (Open Source)**: [github.com/yivpn-official/yivpn-agent-cli](https://github.com/yivpn-official/yivpn-agent-cli)
